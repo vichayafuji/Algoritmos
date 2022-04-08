@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Ayaka C6 Bank</h2>
+    Login: <input id="ipt_login" autofocus> <br>
+    Senha: <input id="ipt_senha" type="password"> <br>
+    3a Informação Pessoal: <input id="ipt_pessoal">
+    <br><br>
+    <button onclick="bt_login()" id="button_on" style="display:block">Entrar</button>
+    <br><br>
+    <div id="spanText">Tentativas restantes: 3</div>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    var ax_tentativas = 3
+    function bt_login()
+    {
+        var ax_login = ipt_login.value
+        var ax_senha = ipt_senha.value
+        var ax_pessoal = ipt_pessoal.value
+        if (ax_tentativas > 1 && ax_login == `ana` && ax_senha == `braga` && (ax_pessoal == 1960 || ax_pessoal == `louro josé`))
+        {
+            ax_tentativas = 3
+            spanText.innerHTML = `Tentativas restantes: ${ax_tentativas}`
+            div_msg.innerHTML = `Usuário autenticado`
+        }
+        else if (ax_tentativas > 1)
+        {
+            ax_tentativas = ax_tentativas - 1
+            spanText.innerHTML = `Tentativas restantes: ${ax_tentativas}`
+            div_msg.innerHTML = `Falha na autenticação`
+        }
+        else 
+        {
+            spanText.innerHTML = `Tentativas restantes: 0`
+            div_msg.innerHTML = `Usuário bloqueado! Procurar o gerente!`
+        }
+    }
+</script>

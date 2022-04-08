@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="slct_pgto">
+        <option value="0">--Selecionar o método de pagamento--</option>
+        <option value="1">Dinheiro</option>
+        <option value="2">Cartão de débito</option>
+        <option value="3">Cartão de crédito</option>
+        <option value="4">Boleto</option>
+        <option value="5">PIX</option>
+    </select>
+    <button onclick="bt_analisar()">Analisar compra</button>
+    <div id="spanText"></div>
+</body>
+</html>
+<script>
+    function bt_analisar()
+    {
+        var ax_pgto = slct_pgto.value
+        if (ax_pgto == 1 || ax_pgto == 2 || ax_pgto == 5)
+        {
+            spanText.innerHTML = `Você terá de pagar à vista`  
+        }
+        else
+        {
+            spanText.innerHTML = `Pagamento poderá ser parcelado`
+        }
+    }
+</script>

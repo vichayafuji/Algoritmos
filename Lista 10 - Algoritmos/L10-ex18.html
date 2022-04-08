@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L10_E18</title>
+</head>
+<body>
+    <h2>Análise de desempenho de Alunos</h2>
+    Entre com a Nota: <input id="ipt_nota" autofocus> <br>
+    Entre com a Frequência: <input id="ipt_frequencia">
+    <br><br>
+    <button onclick="analisar()">Analisar aluno</button>
+    <br><br>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function analisar()
+    {
+        var ax_nota = Number (ipt_nota.value)
+        var ax_frequencia = Number (ipt_frequencia.value)
+        if (ax_nota < 0 || ax_nota > 10)
+        {
+            alert (`Existe nota maior que 10 ou menor que 0?`)
+        }
+        else if (ax_frequencia < 0 || ax_frequencia > 100)
+        {
+            alert (`Existe frequencia maior que 100 ou menor que 0?`)
+        }
+        else if (ax_nota >= 0 && ax_nota < 6)
+        {
+            div_msg.innerHTML = `Aluno ficou abaixo da média`
+        }
+        else if ((ax_nota >= 6 && ax_nota <= 8) && ax_frequencia >= 75)
+        {
+            div_msg.innerHTML = `Aluno ficou na média
+            <br>Aluno aprovado por frequencia`
+        }
+        else if ((ax_nota >= 8 && ax_nota <= 10) && ax_frequencia >= 75)
+        {
+            div_msg.innerHTML = `Aluno ficou acima da média
+            <br>Aluno aprovado por frequencia`
+        }
+        else if ((ax_nota >= 6 && ax_nota <= 8) && ax_frequencia < 75)
+        {
+            div_msg.innerHTML = `Aluno ficou na média
+            <br>Aluno reprovado por frequencia`
+        }
+        else if ((ax_nota >= 8 && ax_nota <= 10) && ax_frequencia < 75)
+        {
+            div_msg.innerHTML = `Aluno ficou acima da média
+            <br>Aluno reprovado por frequencia`
+        }
+        else
+        {
+            div_msg.innerHTML = ``
+        }
+    }
+</script>

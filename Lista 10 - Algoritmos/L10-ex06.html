@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L10_E06</title>
+</head>
+<body>
+    Você já clicou <b id="b_quantidade">0</b> vezes
+    <br><br>
+    <button onclick="clicar()">Clique cabalístico</button>
+</body>
+</html>
+<script>
+    var ax_click = 0
+    function clicar()
+    {
+        ax_click = ax_click + 1
+        if (ax_click == 3 || ax_click == 4 || ax_click == 7 || ax_click == 10)
+        {
+            b_quantidade.innerHTML = `${ax_click}`
+            alert (`Você clicou ${ax_click} vezes e Juliana gosta desse número!`)
+        }
+        else
+        {
+            b_quantidade.innerHTML = `${ax_click}`
+        }
+    }
+</script>

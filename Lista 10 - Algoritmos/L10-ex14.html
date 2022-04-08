@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="slct_passageiro">
+        <option value="0">--Tipo de passageiro--</option>
+        <option value="1">Comum</option>
+        <option value="2">Estudante</option>
+        <option value="3">Idoso/PNE</option>
+    </select>
+    <br>
+    <select id="slct_passagem">
+        <option value="0">--Tipo de passagem--</option>
+        <option value="1">Passagem única</option>
+        <option value="2">Passagem integração</option>
+    </select>
+    <button onclick="bt_simular()">Simular Preço</button>
+    <br><br>
+    <div id="spanText"></div>
+</body>
+</html>
+<script>
+    function bt_simular()
+    {
+        var ax_passagem = slct_passagem.value
+        var ax_passageiro = slct_passageiro.value
+        if (ax_passageiro == 1 && ax_passagem == 1)
+        {
+            ax_preco = 4.40
+            spanText.innerHTML = `Valor da passagem escolhida: R$ ${ax_preco.toFixed(2)}` 
+        }
+        else if (ax_passageiro == 2 && ax_passagem == 1)
+        {
+            ax_preco = 2.20
+            spanText.innerHTML = `Valor da passagem escolhida: R$ ${ax_preco.toFixed(2)}` 
+        }
+        else if (ax_passageiro == 3 && (ax_passagem == 1 || ax_passagem == 2))
+        {
+            spanText.innerHTML = `Valor da passagem escolhida: Gratuita` 
+        }
+        else if (ax_passageiro == 1 && ax_passagem == 2)
+        {
+            ax_preco = 5.90
+            spanText.innerHTML = `Valor da passagem escolhida: R$ ${ax_preco.toFixed(2)}` 
+        }
+        else if (ax_passageiro == 2 && ax_passagem == 2)
+        {
+            ax_preco = 2.95
+            spanText.innerHTML = `Valor da passagem escolhida: R$ ${ax_preco.toFixed(2)}` 
+        }
+        else
+        {
+            spanText.innerHTML = `` 
+        }
+    }
+</script>

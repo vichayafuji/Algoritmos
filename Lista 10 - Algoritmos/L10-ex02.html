@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Processo Seletivo Mentes Brilhantes</h1>
+    Insira sua nota do ENEM:
+    <input id="ipt_enem">
+    <br>
+    Insira sua nota do vestibular interno
+    <input id="ipt_vestibular">
+    <br>
+    <button onclick="bt_avaliar()">Avaliação</button> 
+</body>
+</html>
+<script>
+    function bt_avaliar()
+    {
+        var ax_enem = ipt_enem.value
+        var ax_vestibular = ipt_vestibular.value
+        if ((ax_enem >= 800 || ax_vestibular >=700) && (ax_enem <= 1000 && ax_vestibular <= 1000))
+        {
+            alert (`Parabéns! Você foi aprovado!`)
+        }
+        else if ((ax_enem < 0 || ax_enem > 1000) || (ax_vestibular < 0 || ax_vestibular > 1000))
+        {
+            alert (`Erro`)
+        }
+        else
+        {
+            alert (`Tente semestre que vem!`)
+        }
+    }
+
+</script>
