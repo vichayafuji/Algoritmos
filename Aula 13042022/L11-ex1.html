@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Faça o seu login</h1>
+    Login: <input id="ipt_login"> <br>
+    Senha: <input id="ipt_senha"> <br><br>
+    <button onclick="bt_logar()">Entrar</button>
+    <div id="spanText1"></div>
+    <div id="spanText2"></div>
+</body>
+</html>
+<script>
+    function bt_logar()
+    {
+        var ax_login = ipt_login.value
+        var ax_senha = ipt_senha.value
+        var bool_logOK = ax_login == `aidmin` && ax_senha == `seinha`
+        if (bool_logOK == true)
+        {
+            spanText1.innerHTML = `logado com sucesso`
+            spanText2.innerHTML = ``
+        }
+        if (ax_login != `aidmin`)
+        {
+            spanText1.innerHTML = `usuario incorreto`
+            spanText2.innerHTML = ``
+        }
+        if (ax_senha != `seinha`)
+        {
+            spanText1.innerHTML = `senha incorreta`
+            spanText2.innerHTML = ``
+        }
+        if (bool_logOK == false)
+        {
+            spanText1.innerHTML = `usuário incorreto`
+            spanText2.innerHTML = `senha incorreta`
+        }
+    }
+</script>

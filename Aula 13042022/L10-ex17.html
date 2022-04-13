@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>O Arroz Perfeito?</h1>
+    <select id="slct_arroz">
+        <option value="0">--Selecione--</option>
+        <option value="1">Branco</option>
+        <option value="2">Integral</option>
+    </select>
+    <br>
+    Tempo de cozimento:
+    <input id="ipt_tempo">
+    <br>
+    Quantidade de sal:
+    <input id="ipt_sal">
+    <br>
+    <br>
+    <button onclick="bt_avaliar()">Avaliar Arroz</button>
+    <div id="spanText"></div>
+</body>
+</html>
+<script>
+    function bt_avaliar()
+    {
+        var ax_arroz = Number (slct_arroz.value)
+        var ax_tempo = Number (ipt_tempo.value)
+        var ax_sal = Number (ipt_sal.value)
+        if (ax_arroz == 0 || ax_tempo < 0 || ax_sal < 0)
+        {
+            spanText.innerHTML = `Erro`
+        }
+        else if ((ax_arroz == 1 && ax_tempo == 10 && ax_sal <= 10)||((ax_arroz == 2 && ax_tempo == 20 && ax_sal <= 15)))
+        {
+            spanText.innerHTML = `Arroz perfeito!`
+        }
+        else
+        {
+            spanText.innerHTML = `Arroz não perfeito!`       
+        }
+    }
+</script>
